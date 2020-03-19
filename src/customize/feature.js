@@ -2,9 +2,10 @@ import React, {Component} from 'react';
 import RadioButton from './radio-button'
 
 export default class Feature extends Component {
+    //static defaultProps = { feature: [] };
     render () {
-        //ok ok ok wtf goes in the .keys() method; its not happy when its feature
-        const features = Object.keys(this.state.features).map((feature, idx) => {
+        //ok ok ok wtf goes in the .keys() method; its not happy when its features
+        const features = Object.keys(this.props.feature).map((feature, idx) => {
         const featureHash = feature + '-' + idx;
         return(
         <fieldset className="feature" key={featureHash}>
