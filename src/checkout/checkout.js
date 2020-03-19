@@ -3,8 +3,9 @@ import ChosenFeature from './chosen-feature'
 import Total from './total'
 
 export default class Checkout extends Component {
+
     render () {
-        const summary = Object.keys(this.state.selected).map((feature, idx) => {
+        const summary = Object.keys(this.props.selected).map((feature, idx) => {
         const featureHash = feature + '-' + idx;
         const selectedOption = this.props.store[feature];
     
@@ -20,5 +21,8 @@ export default class Checkout extends Component {
             
         );
         });
+        return (
+            {summary}
+        )
     }
 }

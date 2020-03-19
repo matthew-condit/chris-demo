@@ -3,7 +3,8 @@ import slugify from 'slugify';
 
 export default class RadioButton extends Component {
     render () {
-        const itemHash = slugify(JSON.stringify(this.props.item));
+        const options = this.props.features[this.props.features].map(item => {
+        const itemHash = slugify(JSON.stringify(item));
         return (
             <div key={itemHash} className="feature__item">
             <input
@@ -12,14 +13,18 @@ export default class RadioButton extends Component {
                 className="feature__option"
                 //the dreaded 13th line #GazeIntoTheAbyss
                 name={slugify(this.props.features)}
-                checked={this.props.item.name === this.props.selected[this.props.features].name}
+                checked={item.name === this.props.selected[this.props.features].name}
                 //
-                onChange={e => this.updateFeature(this.props.feature, this.props.item)}
+                onChange={e => this.updateFeature(this.props.features, item)}
             />
             <label htmlFor={itemHash} className="feature__label">
-                {this.props.item.name} ({this.props.money.format(this.props.item.cost)})
+                {item.name} ({this.props.money.format(item.cost)})
             </label>
             </div>
-        );
+        )
+    })
+    return (
+        {options}
+    )
     }
 }
