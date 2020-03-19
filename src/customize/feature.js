@@ -5,7 +5,8 @@ export default class Feature extends Component {
     //static defaultProps = { feature: [] };
     render () {
         //ok ok ok wtf goes in the .keys() method; its not happy when its features
-        const features = Object.keys(this.props.feature).map((feature, idx) => {
+        console.log(this.props.selected)
+        const features = Object.keys(this.props.selected).map((feature, idx) => {
         const featureHash = feature + '-' + idx;
         return(
         <fieldset className="feature" key={featureHash}>

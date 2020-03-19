@@ -38,8 +38,8 @@ export default class App extends Component {
       render() {
     return(
       <div>
-        <Customize store={this.state.state} money={USCurrencyFormat} selected={this.state.updateFeature}/>
-        <Checkout store={this.state.state} money={USCurrencyFormat} selected={this.state.updateFeature}/>
+        <Customize store={this.state.state} money={USCurrencyFormat} selected={this.state.selected}/>
+        <Checkout store={this.state.state} money={USCurrencyFormat} selected={this.state.selected}/>
       </div>
       
     )
