@@ -13,11 +13,7 @@ export default class Feature extends Component {
             <legend className="feature__name">
                 <h3>{feature}</h3>
             </legend>
-            <RadioButton 
-                USCurrencyFormat={this.props.USCurrencyFormat} 
-                selected={this.props.selected}
-                money={this.props.money}
-            />
+            <RadioButton/>
         </fieldset>
         )
     })
