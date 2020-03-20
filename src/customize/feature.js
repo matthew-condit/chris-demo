@@ -8,7 +8,6 @@ export default class Feature extends Component {
         
         const features = Object.keys(this.props.selected).map((feature, idx) => {
         const featureHash = feature + '-' + idx;
-        
         return(
         <fieldset className="feature" key={featureHash}>
             <legend className="feature__name">
@@ -18,15 +17,19 @@ export default class Feature extends Component {
                 USCurrencyFormat={this.props.USCurrencyFormat} 
                 selected={this.props.selected}
                 money={this.props.money}
-                features={features}
             />
         </fieldset>
         )
     })
-    console.log(features)
+    
         return(
             <div>
-                {features}
+                <RadioButton 
+                USCurrencyFormat={this.props.USCurrencyFormat} 
+                selected={this.props.selected}
+                money={this.props.money}
+                features={features}
+            />
             </div>
             
         )
