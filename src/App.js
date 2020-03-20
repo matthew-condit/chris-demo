@@ -36,12 +36,12 @@ export default class App extends Component {
       });
     };
       render() {
-    return(
-      <div>
-        <Customize store={this.state.state} money={USCurrencyFormat} selected={this.state.selected}/>
-        <Checkout store={this.state.state} money={USCurrencyFormat} selected={this.state.selected}/>
-      </div>
-      
-    )
+        
+        return(
+          <div>
+            <Customize money={USCurrencyFormat} selected={this.state.selected}/>
+            <Checkout money={USCurrencyFormat} selected={this.state.selected}/>
+          </div>
+        )
   }
 }
