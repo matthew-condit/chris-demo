@@ -18,7 +18,7 @@ export default class Feature extends Component {
                 USCurrencyFormat={this.props.USCurrencyFormat} 
                 selected={this.props.selected}
                 money={this.props.money}
-                
+                features={features}
             />
         </fieldset>
         )
