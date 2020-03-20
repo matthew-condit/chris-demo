@@ -13,7 +13,6 @@ export default class Feature extends Component {
             <legend className="feature__name">
                 <h3>{feature}</h3>
             </legend>
-            <RadioButton/>
         </fieldset>
         )
     })
