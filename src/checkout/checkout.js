@@ -14,7 +14,7 @@ export default class Checkout extends Component {
                 <ChosenFeature 
                     featureHash={featureHash}
                     selectedOption={selectedOption}
-                    money={this.props.money}
+                    conversion = {this.props.conversion}
                 />
             </div>
             
