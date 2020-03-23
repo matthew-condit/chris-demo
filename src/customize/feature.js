@@ -15,6 +15,8 @@ export default class Feature extends Component {
                 selected={this.props.selected}
                 money={this.props.money}
                 feature={feature}
+                featureHash={featureHash}
+                update={this.props.update}
             />
             </legend>
         </fieldset>

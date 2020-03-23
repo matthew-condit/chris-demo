@@ -5,7 +5,7 @@ export default class Customize extends Component {
     render() {
         return(
             <div>
-                <Feature money={this.props.money} selected={this.props.selected}/>
+                <Feature money={this.props.money} selected={this.props.selected} update={this.props.update}/>
             </div>
         )
     }
