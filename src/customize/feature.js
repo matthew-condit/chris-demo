@@ -5,7 +5,7 @@ export default class Feature extends Component {
     render () {
         //ok ok ok wtf goes in the .keys() method; its not happy when its features
         //console.log(this.props.selected) is defined as the STORE from App.js
-        const features = Object.keys(this.props.conversion).map((feature, idx) => {
+        const features = Object.keys(this.props.selected).map((feature, idx) => {
         const featureHash = feature + '-' + idx;
         console.log("This is money in feature ", this.props.money)
         return (
@@ -15,7 +15,7 @@ export default class Feature extends Component {
                 <h3>{feature}</h3>
                 <RadioButton
                 selected={this.props.selected}
-                money={this.props.money}
+                conversion={this.props.conversion}
                 feature={feature}
                 featureHash={featureHash}
                 update={this.props.update}
