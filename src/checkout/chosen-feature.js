@@ -9,7 +9,7 @@ export default class ChosenFeature extends Component {
                 <div className="summary__option__label">{this.props.featureHash} </div>
                 <div className="summary__option__value">{this.props.selectedOption.name}</div>
                 <div className="summary__option__cost">
-                    {this.props.USCurrencyFormat.format(this.props.selectedOption.cost)}
+                    {this.props.money.format(this.props.selectedOption.cost)}
                 </div>
             </div>
         )

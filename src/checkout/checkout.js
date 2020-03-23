@@ -14,7 +14,7 @@ export default class Checkout extends Component {
                 <ChosenFeature 
                     featureHash={featureHash}
                     selectedOption={selectedOption}
-                    USCurrencyFormat={this.props.USCurrencyFormat}
+                    money={this.props.money}
                 />
             </div>
             
@@ -24,7 +24,7 @@ export default class Checkout extends Component {
         return (
             <div>
                 {summary}
-                <Total />
+                <Total selected={this.props.selected}/>
             </div>
             
         )
