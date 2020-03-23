@@ -27,7 +27,7 @@ export default class RadioButton extends Component {
                         onChange={e => this.props.update(this.props.feature, item)}
                     />
                     <label htmlFor={itemHash} className="feature__label">
-                        {item.name} ({this.props.conversion(item.cost)})
+                        {item.name} ({this.props.conversion.format(item.cost)})
                     </label>
                 </div>
             )
