@@ -38,6 +38,9 @@ export default class App extends Component {
       render() {
         return(
           <div>
+            <header>
+              <h1>ELF Computing | Laptops</h1>
+            </header>
             <Customize money={USCurrencyFormat} selected={this.state.selected} update={this.updateFeature}/>
             <Checkout money={USCurrencyFormat} selected={this.state.selected} />
           </div>

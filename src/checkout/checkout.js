@@ -23,6 +23,7 @@ export default class Checkout extends Component {
         console.log(summary)
         return (
             <div>
+                <h2>Your cart</h2>
                 {summary}
                 <Total selected={this.props.selected}/>
             </div>

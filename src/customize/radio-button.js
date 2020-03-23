@@ -4,11 +4,11 @@ import slugify from 'slugify';
 export default class RadioButton extends Component {
     render () {
         //this one renders the item with the id
-        console.log(this.props.featureHash)
+        //console.log(this.props.featureHash)
         //this one renders the item without the id
         
-        console.log(this.props.selected)
-        console.log(this.props.money)
+        //console.log(this.props.selected)
+        //console.log(this.props.money)
 
         const item = this.props.feature 
             //console.log(item)
