@@ -41,7 +41,8 @@ export default class App extends Component {
             <header>
               <h1>ELF Computing | Laptops</h1>
             </header>
-            <Customize money={USCurrencyFormat} selected={this.state.selected} update={this.updateFeature}/>
+            <Customize selected={this.state.selected}
+             update={this.updateFeature} conversion={this.USCurrencyFormat} />
             <Checkout money={USCurrencyFormat} selected={this.state.selected} />
           </div>
         )
