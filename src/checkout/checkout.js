@@ -3,6 +3,7 @@ import ChosenFeature from './chosen-feature'
 import Total from './total'
 
 export default class Checkout extends Component {
+    static defaultProps = { summary: [] };
     
     render () {
         const summary = Object.keys(this.props.selected).map((feature, idx) => {
@@ -15,14 +16,18 @@ export default class Checkout extends Component {
                     selectedOption={selectedOption}
                     USCurrencyFormat={this.props.USCurrencyFormat}
                 />
-                <Total />
             </div>
             
         );
         });
-        //console.log(summary)
+        console.log(summary)
         return (
-            {summary}
+            <div>
+                {summary}
+                <Total />
+            </div>
+            
         )
     }
 }
+

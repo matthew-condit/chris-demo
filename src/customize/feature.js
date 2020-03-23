@@ -5,26 +5,24 @@ export default class Feature extends Component {
     //static defaultProps = { feature: [] };
     render () {
         //ok ok ok wtf goes in the .keys() method; its not happy when its features
-        
         const features = Object.keys(this.props.selected).map((feature, idx) => {
         const featureHash = feature + '-' + idx;
-        return(
+        return (
         <fieldset className="feature" key={featureHash}>
             <legend className="feature__name">
                 <h3>{feature}</h3>
+                <RadioButton
+                selected={this.props.selected}
+                money={this.props.money}
+                feature={feature}
+            />
             </legend>
         </fieldset>
         )
     })
-    
         return(
             <div>
-                <RadioButton 
-                USCurrencyFormat={this.props.USCurrencyFormat} 
-                selected={this.props.selected}
-                money={this.props.money}
-                features={features}
-            />
+                {features}
             </div>
             
         )
