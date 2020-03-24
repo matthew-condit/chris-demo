@@ -5,7 +5,8 @@ export default class Feature extends Component {
     render () {
         //ok ok ok wtf goes in the .keys() method; its not happy when its features
         //console.log(this.props.selected) is defined as the STORE from App.js
-        const features = Object.keys(this.props.selected).map((feature, idx) => {
+        const features = Object.keys(this.props.store).map((feature, idx) => {
+            console.log(feature)
         const featureHash = feature + '-' + idx;
         return (
         <fieldset className="feature" key={featureHash}>
@@ -17,6 +18,7 @@ export default class Feature extends Component {
                 feature={feature}
                 featureHash={featureHash}
                 update={this.props.update}
+                store={this.props.store}
             />
             </legend>
         </fieldset>

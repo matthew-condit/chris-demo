@@ -16,6 +16,7 @@ export default class Checkout extends Component {
                     conversion = {this.props.conversion}
                     updateFeature={this.props.update}
                     feature={feature}
+                    store={this.props.store}
                 />
             </div>
             

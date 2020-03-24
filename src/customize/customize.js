@@ -6,7 +6,7 @@ export default class Customize extends Component {
         return(
             <div>
                 <h2>Customize your laptop</h2>
-                <Feature selected={this.props.selected} update={this.props.update} conversion={this.props.conversion}
+                <Feature selected={this.props.selected} update={this.props.update} conversion={this.props.conversion} store={this.props.store}
                 />
             </div>
         )
