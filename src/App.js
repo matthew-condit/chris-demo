@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import Checkout from './checkout/checkout';
+import { Checkout } from './checkout/checkout';
 import { Customize } from './customize/customize';
-import { accessSync } from 'fs';
 
 const USCurrencyFormat = new Intl.NumberFormat('en-US', {
   style: 'currency',
@@ -46,8 +45,7 @@ export default class App extends Component {
           store={store}
         />
         <Checkout
-          selected={selectedOptionsForCategory}
-          update={this.updateFeature}
+          selectedOptionsForCategory={selectedOptionsForCategory}
           conversion={USCurrencyFormat}
           store={store}
         />

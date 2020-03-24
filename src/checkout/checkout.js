@@ -1,37 +1,50 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-export default class Checkout extends Component {
-  render() {
-    return (
-      <div>
-        <h2>Your cart</h2>
-        <CartSummary />
-        <Total selected={this.props.selected} />
-      </div>
-    );
-  }
-}
+export const Checkout = ({ selectedOptionsForCategory, conversion, store }) => {
+  const selectedOptionsWithLabel = Object.keys(selectedOptionsForCategory).map(
+    (categoryName) => {
+      const option = store[categoryName].find(
+        (opt) => opt.id === selectedOptionsForCategory[categoryName],
+      );
+      return {
+        ...option,
+        categoryName,
+      };
+    },
+  );
 
-const CartSummary = ({}) => {
+  const totalCost = selectedOptionsWithLabel.reduce(
+    (acc, item) => acc + item.cost,
+    0,
+  );
   return (
-    <div className="summary__option" key={this.props.featureHash}>
-      <div className="summary__option__label">{this.props.feature} </div>
-      <div className="summary__option__value">
-        {this.props.selectedOption[this.props.feature].name}
-      </div>
-      <div className="summary__option__cost">
-        {this.props.conversion.format(
-          this.props.selectedOption[this.props.feature].cost,
-        )}
-      </div>
+    <div>
+      <h2>Your cart</h2>
+      <CartSummary
+        selectedOptionsWithLabel={selectedOptionsWithLabel}
+        conversion={conversion}
+      />
+      <Total totalCost={totalCost} conversion={conversion} />
     </div>
   );
 };
 
-const Total = ({ totalCost }) => {
+const CartSummary = ({ selectedOptionsWithLabel, conversion }) => {
+  return selectedOptionsWithLabel.map((option) => (
+    <div className="summary__option" key={option.id}>
+      <div className="summary__option__label">{option.categoryName}</div>
+      <div className="summary__option__value">{option.name}</div>
+      <div className="summary__option__cost">
+        {conversion.format(option.cost)}
+      </div>
+    </div>
+  ));
+};
+
+const Total = ({ totalCost, conversion }) => {
   return (
     <div>
-      <p>Total: {totalCost}</p>
+      <p>Total: {conversion.format(totalCost)}</p>
     </div>
   );
 };
