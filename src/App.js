@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Checkout from './checkout/checkout';
-import Customize from './customize/customize'
+import Customize from './customize/customize';
 
 const USCurrencyFormat = new Intl.NumberFormat('en-US', {
   style: 'currency',
@@ -42,7 +42,7 @@ export default class App extends Component {
               <h1>ELF Computing | Laptops</h1>
             </header>
             <Customize selected={this.state.selected}
-             update={this.updateFeature} conversion={USCurrencyFormat} />
+             update={this.updateFeature} conversion={USCurrencyFormat}/>
             <Checkout conversion={USCurrencyFormat} selected={this.state.selected} />
           </div>
         )

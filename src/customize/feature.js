@@ -7,9 +7,7 @@ export default class Feature extends Component {
         //console.log(this.props.selected) is defined as the STORE from App.js
         const features = Object.keys(this.props.selected).map((feature, idx) => {
         const featureHash = feature + '-' + idx;
-        console.log("This is money in feature ", this.props.money)
         return (
-            
         <fieldset className="feature" key={featureHash}>
             <legend className="feature__name">
                 <h3>{feature}</h3>

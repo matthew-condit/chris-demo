@@ -1,19 +1,16 @@
 import React, {Component} from 'react';
 import slugify from 'slugify';
+import { render } from 'react-dom';
 
 export default class RadioButton extends Component {
     render () {
-        //this one renders the item with the id
-        //console.log(this.props.featureHash)
-        //this one renders the item without the id
-        
-        //console.log(this.props.selected)
-        //console.log(this.props.money)
-
-        const item = this.props.feature 
-            //console.log(item)
-            console.log(this.props.feature)
+        const item = Object.values(this.props.selected)
+        for (let i = 0; i <item.length; i++){
+            console.log(item[i])
+        }
+            //console.log(this.props.conversion.format(item))
             const itemHash = slugify(JSON.stringify(this.props.featureHash));
+            
             return (
                 <div key={itemHash} className="feature__item">
                     <input

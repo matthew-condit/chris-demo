@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 
 export default class ChosenFeature extends Component {
     render () {
-        console.log(this.props.selectedOption)
         return(
             //ok idk what should go inside the key
             <div className="summary__option" key={this.props.featureHash}>

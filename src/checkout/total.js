@@ -6,6 +6,7 @@ export default class Total extends Component {
             (acc, curr) => acc + this.props.selected[curr].cost,
             0
           );
+          console.log(total)
         return(
             <div>
                 <p>Total: {total}</p>
