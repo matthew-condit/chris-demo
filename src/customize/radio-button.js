@@ -4,13 +4,10 @@ import { render } from 'react-dom';
 
 export default class RadioButton extends Component {
     render () {
-        const item = Object.values(this.props.selected)
-        for (let i = 0; i <item.length; i++){
-            console.log(item[i])
-        }
+        const item = this.props.selected[this.props.feature]
             //console.log(this.props.conversion.format(item))
             const itemHash = slugify(JSON.stringify(this.props.featureHash));
-            
+            console.log(item)
             return (
                 <div key={itemHash} className="feature__item">
                     <input

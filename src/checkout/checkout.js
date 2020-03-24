@@ -7,17 +7,14 @@ export default class Checkout extends Component {
         console.log(Object.values(this.props.selected))
         const summary = Object.keys(this.props.selected).map((feature, idx) => {
         const featureHash = feature + '-' + idx;
-        const selectedValues = Object.values(this.props.selected)
         const selectedOption = this.props.selected;
         return (
             <div>
                 <ChosenFeature 
-                    featureHash={featureHash}
+                    featureHash= {featureHash}
                     selectedOption={selectedOption}
                     conversion = {this.props.conversion}
-                    selected={this.props.selected}
-                    selectedName = {selectedValues.name}
-                    selectedCost = {selectedValues.cost}
+                    updateFeature={this.props.update}
                 />
             </div>
             
