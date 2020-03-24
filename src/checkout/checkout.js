@@ -1,36 +1,37 @@
-import React, {Component} from 'react';
-import ChosenFeature from './chosen-feature'
-import Total from './total'
+import React, { Component } from 'react';
 
 export default class Checkout extends Component {
-    render () {
-        console.log(Object.values(this.props.selected))
-        const summary = Object.keys(this.props.selected).map((feature, idx) => {
-        const featureHash = feature + '-' + idx;
-        const selectedOption = this.props.selected;
-        return (
-            <div>
-                <ChosenFeature 
-                    featureHash= {featureHash}
-                    selectedOption={selectedOption}
-                    conversion = {this.props.conversion}
-                    updateFeature={this.props.update}
-                    feature={feature}
-                    store={this.props.store}
-                />
-            </div>
-            
-        );
-        });
-        console.log(summary)
-        return (
-            <div>
-                <h2>Your cart</h2>
-                {summary}
-                <Total selected={this.props.selected}/>
-            </div>
-            
-        )
-    }
+  render() {
+    return (
+      <div>
+        <h2>Your cart</h2>
+        <CartSummary />
+        <Total selected={this.props.selected} />
+      </div>
+    );
+  }
 }
 
+const CartSummary = ({}) => {
+  return (
+    <div className="summary__option" key={this.props.featureHash}>
+      <div className="summary__option__label">{this.props.feature} </div>
+      <div className="summary__option__value">
+        {this.props.selectedOption[this.props.feature].name}
+      </div>
+      <div className="summary__option__cost">
+        {this.props.conversion.format(
+          this.props.selectedOption[this.props.feature].cost,
+        )}
+      </div>
+    </div>
+  );
+};
+
+const Total = ({ totalCost }) => {
+  return (
+    <div>
+      <p>Total: {totalCost}</p>
+    </div>
+  );
+};

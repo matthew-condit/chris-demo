@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
 import slugify from 'slugify';
-import { render } from 'react-dom';
 
 export default class RadioButton extends Component {
     render () {
-        const item = this.props.store[this.props.feature].map((i) =>{
+        const items = this.props.store[this.props.feature].map((i) =>{
             console.log(i.name)
+            console.log(i);
             const itemHash = slugify(JSON.stringify(this.props.featureHash));
             return (
                 <div key={itemHash} className="feature__item">
@@ -26,7 +26,7 @@ export default class RadioButton extends Component {
             )
         })
         return(
-            {item}
+            items
         )
     }
 }
